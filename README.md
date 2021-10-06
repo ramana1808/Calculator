@@ -1,2 +1,2 @@
 # Calculator
-A functional claculator using HTML, CSS and JavaScript with Bootstrap classes
+A functional calculator using HTML, CSS and JavaScript with Bootstrap classes
