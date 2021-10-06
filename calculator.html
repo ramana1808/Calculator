@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            calculator
+        </title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+        <style>
+            .fullwidth{
+                width: 100%;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container my-5">
+            <div class="row">
+                <div class="col-md-3"></div>
+                <div class="col-md-6 shadow text-center">
+                    <div class="my-3 py-3 btn btn-primary fullwidth">Calculator</div>
+                </div>
+             <div class="col-md-3">
+            </div class="row">
+                <div class="col-md-3"></div>
+                <div class="col-md-6 shadow py-3">
+                <textarea class="fullwidth py-3" readonly id="history" rows="4"></textarea>
+                </div>
+                <div class="col-md-3"></div>
+                </div>
+            <div class="row text-center">
+                <div class="col-md-3"></div>
+                <div class="col-md-5 shadow py-3">
+                    <input type="text" class="fullwidth text-center"; id="result">
+                </div>
+                <div class="col-md-1 shadow">
+                    <input type="button" value="C" class="my-3 fullwidth"; onclick="clr()">
+                </div>
+                <div class="col-md-3"></div>
+                </div>
+            <div class="row">
+                <div class="col-md-3"></div>
+                <div class="col-md-1 py-3 shadow"> 
+                    <input type="button"; value="1"; class="fullwidth"; onclick="dis('1')">
+                    </div>
+                <div class="col-md-1 py-3 shadow">
+                    <input type="button"; value="2"; class="fullwidth"; onclick="dis('2')">
+                    </div>
+                <div class="col-md-1 py-3 shadow">
+                    <input type="button"; value="3"; class="fullwidth"; onclick="dis('3')">
+                    </div>
+                <div class="col-md-3 py-3 shadow">
+                    <input type="button"; value="+"; class="fullwidth"; onclick="dis('+')">    
+                </div>
+                <div class="col-md-3"></div>
+            </div>
+            <div class="row">
+                <div class="col-md-3"></div>
+                <div class="col-md-1 py-3 shadow"> 
+                    <input type="button"; value="4"; class="fullwidth"; onclick="dis('4')">
+                    </div>
+                <div class="col-md-1 py-3 shadow">
+                    <input type="button"; value="5"; class="fullwidth"; onclick="dis('5')">
+                    </div>
+                <div class="col-md-1 py-3 shadow">
+                    <input type="button"; value="6"; class="fullwidth"; onclick="dis('6')">
+                    </div>
+                <div class="col-md-3 py-3 shadow">
+                    <input type="button"; value="-"; class="fullwidth"; onclick="dis('-')">    
+                </div>
+                <div class="col-md-3"></div>
+            </div>
+            <div class="row">
+                <div class="col-md-3"></div>
+                <div class="col-md-1 py-3 shadow"> 
+                    <input type="button"; value="7"; class="fullwidth"; onclick="dis('7')">
+                    </div>
+                <div class="col-md-1 py-3 shadow">
+                    <input type="button"; value="8"; class="fullwidth"; onclick="dis('8')">
+                    </div>
+                <div class="col-md-1 py-3 shadow">
+                    <input type="button"; value="9"; class="fullwidth"; onclick="dis('9')">
+                    </div>
+                <div class="col-md-3 py-3 shadow">
+                    <input type="button"; value="*"; class="fullwidth"; onclick="dis('*')">    
+                </div>
+                <div class="col-md-3"></div>
+            </div>
+            <div class="row">
+                <div class="col-md-3"></div>
+                <div class="col-md-1 py-3 shadow"> 
+                    <input type="button"; value="."; class="fullwidth"; onclick="dis('.')">
+                    </div>
+                <div class="col-md-1 py-3 shadow">
+                    <input type="button"; value="0"; class="fullwidth"; onclick="dis('0')">
+                    </div>
+                <div class="col-md-1 py-3 shadow">
+                    <input type="button"; value="="; class="fullwidth"; onclick="solve()">
+                    </div>
+                <div class="col-md-3 py-3 shadow">
+                    <input type="button"; value="/"; class="fullwidth"; onclick="dis('/')">    
+                </div>
+                <div class="col-md-3"></div>
+            </div>
+        </div>
+        <script>
+            function clr(){
+                document.getElementById('result').value="";
+            }
+            function dis(value){
+                document.getElementById('result').value += value;
+            }
+            function solve(){
+                var textareaElement = document.getElementById('history');
+                var x = document.getElementById('result').value;
+                var y = eval(x);
+                clr();
+                textareaElement.value = textareaElement.value + x + '=' + y + '\n';
+            }
+        </script>
+    </body>
+</html>
